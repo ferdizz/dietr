@@ -1,0 +1,76 @@
+{
+
+  "users": {
+    "1": {
+      "id": "1",
+      "username": "ferdizz",
+      "weight": "60",
+      "height": "179"
+    }
+  },
+
+  "intake": {
+    "1": {
+      "user_id": "1",
+      "date": "15-03-2018",
+      "nutrients": {
+        "1": {
+          "nutrient_id": "1",
+          "amount": "2430"
+        }
+      }
+    }
+  },
+
+  "meals": {
+    "421": {
+      "id": "421",
+      "user_id": "1",
+      "reciepe_id": "137",
+      "timestamp": "1472322852680",
+    }
+  },
+
+  "reciepes": {
+    "137": {
+      "id": "137",
+      "name": "Brødskive med agurk og majones",
+      "ingredients": {
+        "3": {
+          "food_id": "3",
+          "servings": "5",
+          "serving_size": "10"
+        }
+      }
+    }
+  },
+
+  "foods": {
+    "3": {
+      "id": "3",
+      "name": "Agurk",
+      "nutrients": {
+        "1": {
+          "nutrient_id": "1",
+          "amount": "460"
+        }
+      }
+    }
+  },
+
+  "nutrients": {
+
+    "1": {
+      "id": "1",
+      "name": "Calories",
+      "unit": "kcal",
+    },
+
+    "2": {
+      "id": "2",
+      "name": "Proteins",
+      "unit": "g",
+    }
+  }
+
+}

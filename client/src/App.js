@@ -4,13 +4,9 @@ import Dashboard from './components/Dashboard/index'
 class App extends Component {
   render() {
     return (
-
       <div className="container">
-
         <Dashboard />
-
       </div>
-
     );
   }
 }

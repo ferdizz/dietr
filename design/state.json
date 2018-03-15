@@ -1,52 +1,57 @@
 {
-  "users": [
-    {
+
+  "users": [{
+    "id": "1",
+    "username": "ferdizz",
+    "weight": "60",
+    "height": "179"
+  }],
+
+  "intake": [{
+    "user_id": "1",
+    "date": "15-03-2018",
+    "nutrients": [{
+      "nutrient_id": "1",
+      "amount": "2430"
+    }]
+  }],
+
+  "meals": [{
+    "id": "421",
+    "user_id": "1",
+    "reciepe_id": "137",
+    "timestamp": "1472322852680",
+  }],
+
+  "reciepes": [{
+    "id": "137",
+    "name": "Brødskive med agurk og majones",
+    "ingredients": [{
+      "food_id": "3",
+      "servings": "5",
+      "serving_size": "10"
+    }]
+  }],
+
+  "foods": [{
+    "id": "3",
+    "name": "Agurk",
+    "nutrients": [{
+      "nutrient_id": "1",
+      "amount": "460"
+    }]
+  }],
+
+  "nutrients": [{
       "id": "1",
-      "username": "per"
-    }
-  ],
-  "meals": [
+      "name": "Calories",
+      "unit": "kcal",
+    },
     {
-      "id": "421",
-      "user_id": "1",
-      "reciepe_id": "137",
-      "date": "15-03-2018",
-      "time": "20:57"
-    }
+      "id": "2",
+      "name": "Proteins",
+      "unit": "g",
+    },
   ],
-  "reciepes": [
-    {
-      "id": "137",
-      "name": "Brødskive med agurk og majones",
-      "ingredients": [
-        {
-          "food_id": "3",
-          "servings": "5",
-          "serving_size": "10"
-        }
-      ]
-    }
-  ],
-  "foods": [
-    {
-      "id": "3",
-      "name": "Agurk",
-      "Kilokalorier": {
-          "value": 61,
-          "unit": "kcal"
-      },
-      "Fett": {
-          "value": 3.5,
-          "unit": "g"
-      },
-      "Karbohydrat": {
-          "value": 4,
-          "unit": "g"
-      },
-      "Protein": {
-          "value": 3.3,
-          "unit": "g"
-      }
-    }
-  ]
+
 }
