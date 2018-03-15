@@ -1,0 +1,32 @@
+{
+    "id": "01.083",
+    "name": "Kulturmelk, syrnet melk",
+    "Kilokalorier": {
+        "value": 61,
+        "unit": "kcal"
+    },
+    "Fett": {
+        "value": 3.5,
+        "unit": "g"
+    },
+    "Karbohydrat": {
+        "value": 4,
+        "unit": "g"
+    },
+    "Sukker, tilsatt": {
+        "value": 0,
+        "unit": "g"
+    },
+    "Kostfiber": {
+        "value": 0,
+        "unit": "g"
+    },
+    "Protein": {
+        "value": 3.3,
+        "unit": "g"
+    },
+    "Salt": {
+        "value": 0.1,
+        "unit": "g"
+    }
+}
