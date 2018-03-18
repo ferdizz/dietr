@@ -26,12 +26,12 @@
     "421": {
       "id": "421",
       "user_id": "1",
-      "reciepe_id": "137",
-      "timestamp": "1472322852680",
+      "recipe_id": "137",
+      "timestamp": "1472322852680"
     }
   },
 
-  "reciepes": {
+  "recipes": {
     "137": {
       "id": "137",
       "name": "Brødskive med agurk og majones",
@@ -63,13 +63,13 @@
     "1": {
       "id": "1",
       "name": "Calories",
-      "unit": "kcal",
+      "unit": "kcal"
     },
 
     "2": {
       "id": "2",
       "name": "Proteins",
-      "unit": "g",
+      "unit": "g"
     }
   }
 

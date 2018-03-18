@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Progress from './Progress/index'
-import styles from './styles.css'
+import './styles.css'
 
 class Dashboard extends Component {
 
