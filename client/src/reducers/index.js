@@ -1,14 +1,12 @@
 import { combineReducers } from 'redux'
-import users from './users'
-import intake from './intake'
+import user from './user'
 import foods from './foods'
 import meals from './meals'
 import recipes from './recipes'
 import nutrients from './nutrients'
 
 const combinedReducer = combineReducers({
-  users,
-  intake,
+  user,
   foods,
   meals,
   recipes,

@@ -1,5 +1,7 @@
 // Users
-export const ADD_USER = 'ADD_USER'
+export const LOG_IN = 'LOG_IN'
+export const LOG_OUT = 'LOG_OUT'
+export const UPDATE_USER = 'UPDATE_USER'
 
 // Intake
 export const ADD_INTAKE = 'ADD_INTAKE'

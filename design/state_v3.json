@@ -1,16 +1,13 @@
 {
-  "users": {
-    "1": {
-      "id": "1",
-      "username": "ferdizz",
-      "weight": "60",
-      "height": "179",
-      "meals": {
-        "421": {
-          "id": "421",
-          "recipe_id": "137",
-          "timestamp": "1472322852680"
-        }
+  "user": {
+    "username": "ferdizz",
+    "weight": "60",
+    "height": "179",
+    "meals": {
+      "421": {
+        "id": "421",
+        "recipe_id": "137",
+        "timestamp": "1472322852680"
       }
     }
   },
