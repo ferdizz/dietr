@@ -9,6 +9,7 @@ class App extends Component {
     return (
       <div className="container">
         {this.props.user.username ? <Dashboard /> : <Login />}
+        {/* {<Dashboard />} */}
         <Debugger />
       </div>
     );

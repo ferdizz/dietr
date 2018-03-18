@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Progress from './Progress/index'
 import './styles.css'
+
+import { logout } from '../../actions/userActions'
 
 class Dashboard extends Component {
 
@@ -17,10 +20,25 @@ class Dashboard extends Component {
                     <Progress type={'Proteins'} />
                     <Progress type={'Carbs'} />
                     <Progress type={'Fat'} />
+                    <p class="card-text"><small class="text-muted">Logged in as {this.props.user.username}</small></p>
+                    {/* <a href="/" className="card-link">Edit profile</a> */}
+                    <a href="/" className="card-link" onClick={this.props.logout} >Log out</a>
                 </div>
             </div>
         );
     }
 }
 
-export default Dashboard;
+function mapStateToProps(state) {
+    return {
+        user: state.user
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        logout: () => logout(dispatch)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
