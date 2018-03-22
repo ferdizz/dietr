@@ -1,6 +1,4 @@
-# Todo
-
-## Frontend
+# Frontend
 
 ### Login / Create user
 - [ ] Add authentication
@@ -13,7 +11,7 @@
 - [ ] Add option to edit profile info
 - [ ] Add option to delete profile 
 
-## Backend
+# Backend
 
 ### DB
 - [ ] ...
