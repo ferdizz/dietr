@@ -14,10 +14,23 @@ class Login extends Component {
         }
     }
 
-    onChange = (e) => {
+    handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         })
+    }
+
+    handleKeypress = (e) => {
+        if (e.key && e.key === 'Enter') {
+            
+            // temp way to distinguish between the two
+            if (this.state.weight || this.state.height) {
+                this.submitCreate()
+            } else {
+                this.submitLogin()
+            }
+
+        }
     }
 
     submitLogin = () => {
@@ -45,7 +58,7 @@ class Login extends Component {
                 <h5 className="card-title">Login</h5>
                 <div class="form-group">
                     <label>Username</label>
-                    <input type="text" class="form-control" name="username" onChange={this.onChange} />
+                    <input type="text" class="form-control" name="username" onChange={this.handleChange} onKeyPress={this.handleKeypress} />
                 </div>
                 <button class="btn btn-primary" style={{ marginRight: '10px' }} onClick={this.submitLogin} >Submit</button>
                 <button class="btn btn-primary" onClick={this.changeForm} >Create user</button>
@@ -57,11 +70,11 @@ class Login extends Component {
                 <h5 className="card-title">Create user</h5>
                 <div class="form-group">
                     <label>Username</label>
-                    <input type="text" class="form-control" name="username" onChange={this.onChange} />
+                    <input type="text" class="form-control" name="username" onChange={this.handleChange} onKeyPress={this.handleKeypress} />
                     <label>Weight</label>
-                    <input type="text" class="form-control" name="weight" onChange={this.onChange} />
+                    <input type="text" class="form-control" name="weight" onChange={this.handleChange} onKeyPress={this.handleKeypress} />
                     <label>Height</label>
-                    <input type="text" class="form-control" name="height" onChange={this.onChange} />
+                    <input type="text" class="form-control" name="height" onChange={this.handleChange} onKeyPress={this.handleKeypress} />
                 </div>
                 <button class="btn btn-primary" style={{ marginRight: '10px' }} onClick={this.submitCreate} >Submit</button>
                 <button class="btn btn-primary" onClick={this.changeForm} >Cancel</button>
