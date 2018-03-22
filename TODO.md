@@ -9,4 +9,4 @@
 ## User profile
 - [ ] Create a simple profile page
 - [ ] Add option to edit profile info
-- [ ] Add option to delete profile
+- [ ] Add option to delete profile 
