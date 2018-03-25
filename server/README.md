@@ -1,4 +1,4 @@
-# Routes and Endpoints:
+# API Endpoints:
 <!-- - GET /api/foods/ Return all food
 - GET /api/foods/{id} Return food with matching id
 - PUT /api/foods/{id} Update food with matching id

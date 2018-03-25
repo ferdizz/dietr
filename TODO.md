@@ -11,6 +11,14 @@
 - [ ] Add option to edit profile info
 - [ ] Add option to delete profile 
 
+### Docs
+- [ ] Document usecases
+    - [x] Add new food
+    - [x] Add new recipe
+    - [x] Add new meal
+    - [ ] ...
+- [ ] Document client setup and installation
+
 # Backend
 
 ### DB
@@ -18,3 +26,7 @@
 
 ### API
 - [ ] ...
+
+### Docs
+- [ ] Document API endpoints
+- [ ] Document server setup and installation

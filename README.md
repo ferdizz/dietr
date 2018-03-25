@@ -32,7 +32,7 @@ Main page / Overview:
 1. Select "Add new food"
 2. Enter title (and description?)
 3. Enter amount of the contained nutrients
-4. (add serving sizes?)
+4. Add serving sizes (total size required)
 5. Submit food
 
 ### Add a meal (e.g. a slice of pizza)
