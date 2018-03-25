@@ -1,4 +1,4 @@
-Nutrition logger
+<!-- Nutrition logger
 ------------------------------
 Main page / Overview:
 - Title / Date (+ change date)
@@ -13,7 +13,7 @@ Main page / Overview:
   - Present food card.
   - If no data found, create new card.
   - Save / Remove card.
-- Browse food (new page?)
+- Browse food (new page?) -->
 
 # Usecases
 
