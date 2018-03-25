@@ -21,12 +21,12 @@ app.use(function (req, res, next) {
 
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization, Access-Control-Allow-Credentials");
-  
-  if(req.method === 'OPTIONS'){
+
+  if (req.method === 'OPTIONS') {
     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
     return res.status(200).json({});
   }
-  
+
   // res.header("Access-Control-Allow-Credentials", "true");
   next();
 })
@@ -38,6 +38,9 @@ app.use('/users', userRoutes);
 // Custom error handling
 app.use((req, res, next) => {
   // res.status(404).send('Not found');
+  if (req.originalUrl === '/favicon.ico') {
+    return res.status(404)
+  }
   const err = new Error('Not found');
   err.status = 404;
   next(err);
@@ -46,6 +49,7 @@ app.use((req, res, next) => {
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.log(err);
+  // console.log(req.originalUrl)
   res.status(err.status || 500);
   res.json({
     error: {

@@ -2,8 +2,8 @@
 
 ### Login / Create user
 - [ ] Add authentication
-- [ ] Save usertoken to cookies(?)
-- [ ] Delete usertoken on logout
+- [ ] Save user token to cookies(?)
+- [ ] Delete user token on logout
 - [ ] Add form validation
 
 ### User profile

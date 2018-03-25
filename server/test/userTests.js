@@ -1,5 +1,5 @@
-const UserModel = require('../models/userModel');
-const config = require('../config/mainConfig');
+const UserModel = require('../api/models/user');
+const config = require('../config');
 const mongoose = require('mongoose');
 const assert = require('assert');
 const USERNAME = 'testuser'
