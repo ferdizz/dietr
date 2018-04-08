@@ -1,6 +1,7 @@
-// Users
+// User
 export const LOG_IN = 'LOG_IN'
 export const LOG_OUT = 'LOG_OUT'
+export const SET_STATUS = 'SET_STATUS'
 export const UPDATE_USER = 'UPDATE_USER'
 
 // Intake

@@ -22,7 +22,7 @@ class Login extends Component {
 
     handleKeypress = (e) => {
         if (e.key && e.key === 'Enter') {
-            
+
             // temp way to distinguish between the two
             if (this.state.weight || this.state.height) {
                 this.submitCreate()
@@ -56,28 +56,29 @@ class Login extends Component {
         const loginForm = (
             <div>
                 <h5 className="card-title">Login</h5>
-                <div class="form-group">
+                <div className="form-group">
                     <label>Username</label>
-                    <input type="text" class="form-control" name="username" onChange={this.handleChange} onKeyPress={this.handleKeypress} />
+                    <input type="text" className="form-control" name="username" onChange={this.handleChange} onKeyPress={this.handleKeypress} />
                 </div>
-                <button class="btn btn-primary" style={{ marginRight: '10px' }} onClick={this.submitLogin} >Submit</button>
-                <button class="btn btn-primary" onClick={this.changeForm} >Create user</button>
+                <button className="btn btn-primary" style={{ marginRight: '10px' }} onClick={this.submitLogin} >Submit</button>
+                <button className="btn btn-primary" onClick={this.changeForm} >Create user</button>
+                <p className="text-danger" style={{ marginBottom: '0', marginTop: '10px' }} >{this.props.status}</p>
             </div>
         )
 
         const createUserForm = (
             <div>
                 <h5 className="card-title">Create user</h5>
-                <div class="form-group">
+                <div className="form-group">
                     <label>Username</label>
-                    <input type="text" class="form-control" name="username" onChange={this.handleChange} onKeyPress={this.handleKeypress} />
+                    <input type="text" className="form-control" name="username" onChange={this.handleChange} onKeyPress={this.handleKeypress} />
                     <label>Weight</label>
-                    <input type="text" class="form-control" name="weight" onChange={this.handleChange} onKeyPress={this.handleKeypress} />
+                    <input type="text" className="form-control" name="weight" onChange={this.handleChange} onKeyPress={this.handleKeypress} />
                     <label>Height</label>
-                    <input type="text" class="form-control" name="height" onChange={this.handleChange} onKeyPress={this.handleKeypress} />
+                    <input type="text" className="form-control" name="height" onChange={this.handleChange} onKeyPress={this.handleKeypress} />
                 </div>
-                <button class="btn btn-primary" style={{ marginRight: '10px' }} onClick={this.submitCreate} >Submit</button>
-                <button class="btn btn-primary" onClick={this.changeForm} >Cancel</button>
+                <button className="btn btn-primary" style={{ marginRight: '10px' }} onClick={this.submitCreate} >Submit</button>
+                <button className="btn btn-primary" onClick={this.changeForm} >Cancel</button>
             </div>
         )
 
@@ -91,6 +92,12 @@ class Login extends Component {
     }
 }
 
+function mapStateToProps(state) {
+    return {
+        status: state.user.status
+    }
+}
+
 function mapDispatchToProps(dispatch) {
     return {
         login: (userdata) => login(dispatch, userdata),
@@ -98,4 +105,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

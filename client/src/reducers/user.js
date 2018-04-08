@@ -9,6 +9,8 @@ const user = (state = initialState, action) => {
             return Object.assign({}, state, action.data)
         case types.LOG_OUT:
             return Object.assign({}, initialState, {})
+        case types.SET_STATUS:
+            return Object.assign({}, state, action.data)
         default:
             return state;
     }
