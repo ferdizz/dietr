@@ -1,5 +1,7 @@
 # API Endpoints:
-<!-- - GET /api/foods/ Return all food
-- GET /api/foods/{id} Return food with matching id
-- PUT /api/foods/{id} Update food with matching id
-- DEL /api/foods/{id} Delete food with matching id -->
+
+### User endpoints:
+- GET /api/users Return all users
+- GET /api/users/:id Return user with matching id
+- POST /api/users/signup Sign up new user
+- POST /api/users/login Log in to existing user
