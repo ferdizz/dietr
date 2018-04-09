@@ -56,8 +56,8 @@ exports.login = (req, res, next) => {
       user_id: user._id,
       username: user.username
     }, process.env.JWT_KEY, {
-      expiresIn: "1h"
-    });
+        expiresIn: "1h"
+      });
 
     res.status(200).json({
       message: 'Login successful',
@@ -65,4 +65,15 @@ exports.login = (req, res, next) => {
     });
 
   });
+}
+
+// test func to filter results by params
+exports.get_user_by_username = (req, res, next) => {
+
+  const username = req.params.username
+
+  User.find({ username: new RegExp("^" + username) }, '-__v').limit(15).then((users) => {
+    res.status(200).send(users);
+  }).catch(next);
+
 }
