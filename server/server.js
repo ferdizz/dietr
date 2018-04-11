@@ -33,7 +33,9 @@ app.use(function (req, res, next) {
 
 // Import and setup routes
 const userRoutes = require('./api/routes/user');
+const foodRoutes = require('./api/routes/food');
 app.use('/users', userRoutes);
+app.use('/foods', foodRoutes);
 
 // Custom error handling
 app.use((req, res, next) => {
