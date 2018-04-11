@@ -1,12 +1,12 @@
 const initialState = {}
 
-const meals = (state = initialState, action) => {
+const meal = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_MEAL':
-            return null; //TODO
+            return Object.assign({}, state, action.data)
         default:
             return state;
     }
 }
 
-export default meals;
+export default meal;

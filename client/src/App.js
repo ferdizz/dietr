@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import Dashboard from './components/Dashboard/index'
-import Debugger from './components/Debugger/index'
-import Login from './components/Login/index'
+import Dashboard from './components/Dashboard'
+import Debugger from './components/Debugger'
+import Login from './components/Login'
+import Search from './components/Search'
+import Meal from './components/Meal'
 import { setUser, setStatus } from './actions/userActions'
 import { getData } from './utils/storage'
 
@@ -12,14 +14,23 @@ class App extends Component {
     let userdata = getData('user')
     if (userdata) {
       this.props.setUser(userdata)
-      this.props.setStatus({status: 'User retrieved from localstorage'})
+      this.props.setStatus({ status: 'User retrieved' })
     }
   }
 
   render() {
+
     return (
       <div className="container">
-        {this.props.user.username ? <Dashboard /> : <Login />}
+        {
+          this.props.user.username
+            ? (<div>
+              <Dashboard />
+              <Search />
+              {this.props.meal.food && <Meal />}
+            </div>)
+            : <Login />
+        }
         <Debugger />
       </div>
     );
@@ -28,7 +39,8 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-    user: state.user
+    user: state.user,
+    meal: state.meal
   }
 }
 
