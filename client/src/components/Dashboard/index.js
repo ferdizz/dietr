@@ -20,7 +20,7 @@ class Dashboard extends Component {
                     <Progress type={'Proteins'} />
                     <Progress type={'Carbs'} />
                     <Progress type={'Fat'} />
-                    <p class="card-text"><small class="text-muted">Logged in as {this.props.user.username}</small></p>
+                    <p className="card-text"><small className="text-muted">Logged in as {this.props.user.username}</small></p>
                     {/* <a href="/" className="card-link">Edit profile</a> */}
                     <a href="/" className="card-link" onClick={this.props.logout} >Log out</a>
                 </div>

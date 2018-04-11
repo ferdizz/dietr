@@ -5,7 +5,6 @@ import { saveData } from '../utils/storage'
 export const login = (dispatch, userdata) => {
 
     axios.post('http://localhost:3001/users/login', userdata)
-
         .then(response => {
             if (response.status === 200 && response.data.token) {
                 saveData('token', response.data.token)
@@ -19,7 +18,6 @@ export const login = (dispatch, userdata) => {
             console.log(error.response)
             setStatus(dispatch, { status: error.response.data.message })
         })
-
 }
 
 export const setUser = (dispatch, userdata) => {

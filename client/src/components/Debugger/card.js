@@ -15,6 +15,14 @@ class Card extends Component {
                 break;
             case 'foods':
                 data = this.props.foods
+                if (this.props.foods.selectedFood) {
+                    data = {
+                        selectedFood: {
+                            _id: this.props.foods.selectedFood._id,
+                            name: this.props.foods.selectedFood.name
+                        }
+                    }
+                }
                 break;
             case 'nutrients':
                 data = this.props.nutrients
@@ -26,7 +34,7 @@ class Card extends Component {
                 break;
         }
 
-        if(data){
+        if (data) {
             return JSON.stringify(data, null, 2)
         } else {
             return 'No data'
@@ -39,7 +47,6 @@ class Card extends Component {
                 <div className="card-body">
                     <h5 className="card-title">{this.props.type}</h5>
                     <pre>{this.getData()}</pre>
-                    {/* <button className="btn btn-primary">Get {this.props.type}</button> */}
                 </div>
             </div>
         );
