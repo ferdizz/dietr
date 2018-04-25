@@ -1,4 +1,4 @@
-# Nutrition logger
+# Dietr
 Dietr is a simple nutrition logger/meal diary. Created using the [MERN-stack](http://mern.io/). 
 
 **Note:** this project is far from done.
