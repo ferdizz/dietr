@@ -15,7 +15,7 @@ Main page / Overview:
   - Save / Remove card.
 - Browse food (new page?) -->
 
-# Usecases
+# Usecases (work in progress)
 
 ### Add a recipe (e.g. homemade pizza)
 1. Select "Create new recipe"
