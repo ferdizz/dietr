@@ -1,21 +1,9 @@
-<!-- Nutrition logger
-------------------------------
-Main page / Overview:
-- Title / Date (+ change date)
-- Your intake overview:
-  - KCAL goal
-  - KCAL eaten / left
-  - Protein eaten / left
-  - Fat eaten / left
-  - Carbs eaten / left
-  - Vitamins overview?
-- Add food (search bar):
-  - Present food card.
-  - If no data found, create new card.
-  - Save / Remove card.
-- Browse food (new page?) -->
+# Nutrition logger
+Dietr is a simple nutrition logger/meal diary. Created using the [MERN-stack](http://mern.io/). 
 
-# Usecases (work in progress)
+**Note:** this project is far from done.
+
+## Usecases (work in progress)
 
 ### Add a recipe (e.g. homemade pizza)
 1. Select "Create new recipe"
