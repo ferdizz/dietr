@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/ferdizz/dietr.svg?branch=master)](https://travis-ci.org/ferdizz/dietr)
 # Dietr
 Dietr is a simple nutrition logger/meal diary. Created using the [MERN-stack](http://mern.io/). 
 
