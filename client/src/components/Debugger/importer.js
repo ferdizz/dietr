@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import data from './data.json'
+import React, { Component } from 'react'
 import axios from 'axios'
 
 class Importer extends Component {
@@ -8,23 +7,33 @@ class Importer extends Component {
         let promises = []
         let counter = 0
 
-        data.forEach(function (food) {
-            promises.push(axios.post('http://localhost:3001/foods', food)
-                .catch(function (err) {
-                    return err.response;
-                }))
-        })
+        try {
+            var data = require('./data.json')
+        } catch (error) {
+            console.log('data.json not found')
+        }
 
-        axios.all(promises).then(function (results) {
-            results.forEach(function (res) {
-                if (res.status === 201) {
-                    counter++;
-                } else {
-                    console.log(res.data.message)
-                }
+        if (data) {
+
+            data.forEach(function (food) {
+                promises.push(axios.post('http://localhost:3001/foods', food)
+                    .catch(function (err) {
+                        return err.response;
+                    }))
             })
-            console.log(counter + ' of ' + data.length + ' food items imported')
-        })
+
+            axios.all(promises).then(function (results) {
+                results.forEach(function (res) {
+                    if (res.status === 201) {
+                        counter++;
+                    } else {
+                        console.log(res.data.message)
+                    }
+                })
+                console.log(counter + ' of ' + data.length + ' food items imported')
+            })
+
+        }
     }
 
     render() {
