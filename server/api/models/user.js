@@ -1,14 +1,15 @@
 // Load required packages
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 // Define the user schema
 const userSchema = new mongoose.Schema({
-  username: {
-    type: String,
-    unique: true,
-    required: true,
-  },
-  weight: Number
+    username: {
+        type: String,
+        unique: true,
+        required: true
+    },
+    weight: Number,
+    height: Number
 });
 
 // Export the user model
