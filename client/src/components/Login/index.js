@@ -79,6 +79,7 @@ class Login extends Component {
                 </div>
                 <button className="btn btn-primary" style={{ marginRight: '10px' }} onClick={this.submitCreate} >Submit</button>
                 <button className="btn btn-primary" onClick={this.changeForm} >Cancel</button>
+                <p className="text-danger" style={{ marginBottom: '0', marginTop: '10px' }} >{this.props.status}</p>
             </div>
         )
 
