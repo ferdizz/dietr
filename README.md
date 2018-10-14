@@ -8,7 +8,7 @@ Dietr is a simple nutrition logger/meal diary. Created using the [MERN-stack](ht
 
 To install and run this project locally on your own computer, follow the steps below.
 
-**Important:** This project requires [MongoDB](https://docs.mongodb.com/manual/installation/#mongodb-community-edition) and [Docker](https://docs.docker.com/compose/install/) installed on your computer. 
+**Important:** This project requires [Node.js](https://nodejs.org/en/), [MongoDB](https://docs.mongodb.com/manual/installation/#mongodb-community-edition) and [Docker](https://docs.docker.com/compose/install/) installed on your computer. 
 
 - Download / clone the project
 
