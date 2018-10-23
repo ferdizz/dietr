@@ -61,5 +61,5 @@ typings/
 # Visual Code settings
 .vscode
 
-# Configs
-mongo-sync/config.yml
+# Misc
+server/mongo-sync
