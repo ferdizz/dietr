@@ -17,28 +17,22 @@ To install and run this project locally on your own computer, follow the steps b
     cd dietr
     ```
     
+- Run the setup script to setup mongo-sync and pull remote database
+
+    ```
+    ./setup
+    ```
+    
 - Install node modules & dependencies
 
     ```
     cd client && npm install && cd ../server && npm install
     ```
-    
-- Start MongoDB in Docker
-
-    ```
-    docker-compose up db
-    ```
-    
-- Open a new terminal window and run mongo-sync to pull data from remote db
-
-    ```
-    cd ../mongo-sync && ./mongo-sync pull
-    ```
 
 - Start the server
 
     ```
-    cd ../server && npm start
+    npm start
     ```
 
 - Open a new terminal window and start the client
