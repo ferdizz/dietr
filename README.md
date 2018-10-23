@@ -4,6 +4,50 @@ Dietr is a simple nutrition logger/meal diary. Created using the [MERN-stack](ht
 
 **Note:** this project is far from done.
 
+## Install
+
+To install and run this project locally on your own computer, follow the steps below.
+
+**Important:** This project requires [Node.js](https://nodejs.org/en/), [MongoDB](https://docs.mongodb.com/manual/installation/#mongodb-community-edition) and [Docker](https://docs.docker.com/compose/install/) installed on your computer. 
+
+- Download / clone the project
+
+    ```
+    git clone https://github.com/ferdizz/dietr.git
+    cd dietr
+    ```
+    
+- Install node modules & dependencies
+
+    ```
+    cd client && npm install && cd ../server && npm install
+    ```
+    
+- Start MongoDB in Docker
+
+    ```
+    docker-compose up db
+    ```
+    
+- Open a new terminal window and run mongo-sync to pull data from remote db
+
+    ```
+    cd ../mongo-sync && ./mongo-sync pull
+    ```
+
+- Start the server
+
+    ```
+    cd ../server && npm start
+    ```
+
+- Open a new terminal window and start the client
+
+    ```
+    cd dietr/client && npm start
+    ```
+
+<!---
 ## Usecases (work in progress)
 
 ### Add a recipe (e.g. homemade pizza)
@@ -31,3 +75,4 @@ Dietr is a simple nutrition logger/meal diary. Created using the [MERN-stack](ht
 4. Select serving type
 5. Select number of servings eaten
 6. Submit meal
+--->

@@ -1,21 +1,21 @@
 # Mongo-Sync Configurations
 
 local:
-  db: 'local_db_name'
+  db: 'db'
   host:
     port: 27017
   access:
-    username: 'local_mongo_user'
-    password: 'local_mongo_pass'
+    username: ''
+    password: ''
 
 remote:
-  db: 'remote_db_name'
+  db: 'dietr-dev'
   host:
-    url: 'some.remoteurl.com'
-    port: 27017
+    url: 'ds052978.mlab.com'
+    port: 52978
   access:
-    username: 'remote_mongo_user'
-    password: 'remote_mongo_pass'
+    username: 'public'
+    password: 'password123'
 
 tunnel:
   on: false
