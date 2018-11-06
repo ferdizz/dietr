@@ -17,7 +17,7 @@
     - [x] Add new recipe
     - [x] Add new meal
     - [ ] ...
-- [ ] Document client setup and installation
+- [x] Document client setup and installation
 
 # Backend
 
@@ -29,4 +29,4 @@
 
 ### Docs
 - [ ] Document API endpoints
-- [ ] Document server setup and installation
+- [x] Document server setup and installation
