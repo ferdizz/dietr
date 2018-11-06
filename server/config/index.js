@@ -1,4 +1,4 @@
-let db_uri = 'mongodb://localhost:27017/dietr';
+let db_uri = 'mongodb://localhost:27017/db';
 if (typeof global.it === 'function')
   db_uri = 'mongodb://localhost:27017/testdb';
 
