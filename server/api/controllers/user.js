@@ -37,12 +37,9 @@ exports.signup = (req, res, next) => {
         user.save()
             .then(newUser => {
                 res.status(201).json({
-                    message: 'User created',
-                    token: getToken(newUser),
-                    user: {
-                        id: newUser._id,
-                        username: newUser.username
-                    }
+                    id: newUser._id,
+                    username: newUser.username,
+                    token: getToken(newUser)
                 });
             })
             .catch(next);
@@ -60,7 +57,8 @@ exports.login = (req, res, next) => {
         }
 
         res.status(200).json({
-            message: 'Login successful',
+            id: user._id,
+            username: user.username,
             token: getToken(user)
         });
     });

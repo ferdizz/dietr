@@ -1,15 +1,14 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import Progress from './Progress/index'
-import './styles.css'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import Progress from './Progress/index';
+import './styles.css';
 
-import { logout } from '../../actions/userActions'
+import { userLogout } from '../../actions/userActions';
 
 class Dashboard extends Component {
-
     getDate = () => {
-        return 'Thursday, 8 March'
-    }
+        return 'Thursday, 8 March';
+    };
 
     render() {
         return (
@@ -20,9 +19,15 @@ class Dashboard extends Component {
                     <Progress type={'Proteins'} />
                     <Progress type={'Carbs'} />
                     <Progress type={'Fat'} />
-                    <p className="card-text"><small className="text-muted">Logged in as {this.props.user.username}</small></p>
+                    <p className="card-text">
+                        <small className="text-muted">
+                            Logged in as {this.props.user.username}
+                        </small>
+                    </p>
                     {/* <a href="/" className="card-link">Edit profile</a> */}
-                    <a href="/" className="card-link" onClick={this.props.logout} >Log out</a>
+                    <a href="javascript:void(0)" className="card-link" onClick={this.props.logout}>
+                        Log out
+                    </a>
                 </div>
             </div>
         );
@@ -32,13 +37,14 @@ class Dashboard extends Component {
 function mapStateToProps(state) {
     return {
         user: state.user
-    }
+    };
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        logout: () => logout(dispatch)
-    }
-}
+const mapDispatchToProps = dispatch => ({
+    logout: () => dispatch(userLogout())
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Dashboard);

@@ -1,8 +1,21 @@
-export const getData = (key) => {
-    var value = localStorage.getItem(key);
-    return value && JSON.parse(value);
-}
+export const loadState = () => {
+    try {
+        const serializedState = localStorage.getItem('state');
+        if (serializedState === null) {
+            return undefined;
+        }
+        return JSON.parse(serializedState);
+    } catch (error) {
+        console.log(error);
+        return undefined;
+    }
+};
 
-export const saveData = (key, value) => {
-    localStorage.setItem(key, JSON.stringify(value));
-}
+export const saveState = state => {
+    try {
+        const serializedState = JSON.stringify(state);
+        localStorage.setItem('state', serializedState);
+    } catch (error) {
+        console.log(error);
+    }
+};
