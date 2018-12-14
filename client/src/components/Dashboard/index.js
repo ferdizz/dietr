@@ -24,10 +24,9 @@ class Dashboard extends Component {
                             Logged in as {this.props.user.username}
                         </small>
                     </p>
-                    {/* <a href="/" className="card-link">Edit profile</a> */}
-                    <a href="javascript:void(0)" className="card-link" onClick={this.props.logout}>
+                    <button type="button" className="link-button" onClick={this.props.logout}>
                         Log out
-                    </a>
+                    </button>
                 </div>
             </div>
         );
