@@ -1,6 +1,8 @@
 // Load required packages
 const mongoose = require('mongoose');
 
+const Meal = require('./meal');
+
 // Define the user schema
 const userSchema = new mongoose.Schema({
     username: {
@@ -9,7 +11,8 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     weight: Number,
-    height: Number
+    height: Number,
+    meals: [Meal.schema]
 });
 
 // Export the user model
