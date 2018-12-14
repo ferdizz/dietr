@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import Autosuggest from 'react-autosuggest';
-import '../../styles/search.css'
-import axios from 'axios'
-import { connect } from 'react-redux'
-import { addMeal } from '../../actions/mealActions'
+import '../../styles/search.css';
+import axios from 'axios';
+import { connect } from 'react-redux';
+import { addMeal } from '../../actions/mealActions';
 
 class Search extends Component {
-
     constructor() {
         super();
         this.state = {
@@ -20,14 +19,14 @@ class Search extends Component {
         this.setState({
             value: newValue
         });
-    }
+    };
 
     getSuggestionValue = suggestion => {
         if (suggestion.isAddNew) {
             return this.state.value;
         }
         return suggestion.name;
-    }
+    };
 
     renderSuggestion = suggestion => {
         if (suggestion.isAddNew) {
@@ -39,7 +38,7 @@ class Search extends Component {
         }
 
         return suggestion.name;
-    }
+    };
 
     // getSuggestions = value => {
     //     const inputValue = value.trim().toLowerCase();
@@ -64,14 +63,13 @@ class Search extends Component {
     onSuggestionsFetchRequested = ({ value }) => {
         const inputValue = value.trim().toLowerCase();
 
-        axios.get('http://localhost:3001/foods/search/' + inputValue)
-            .then(response => {
-                if (response.data.length === 0) {
-                    this.setState({ suggestions: [{ isAddNew: true }] })
-                } else {
-                    this.setState({ suggestions: response.data })
-                }
-            })
+        axios.get('http://localhost:3001/foods/search/' + inputValue).then(response => {
+            if (response.data.length === 0) {
+                this.setState({ suggestions: [{ isAddNew: true }] });
+            } else {
+                this.setState({ suggestions: response.data });
+            }
+        });
     };
 
     onSuggestionsClearRequested = () => {
@@ -84,9 +82,9 @@ class Search extends Component {
         if (suggestion.isAddNew) {
             console.log('Add new:', this.state.value);
         } else {
-            this.props.addMeal(suggestion)
+            this.props.addMeal(suggestion);
         }
-        this.setState({ value: '' })
+        this.setState({ value: '' });
     };
 
     render() {
@@ -113,8 +111,11 @@ class Search extends Component {
 
 function mapDispatchToProps(dispatch) {
     return {
-        addMeal: (food) => addMeal(dispatch, food),
-    }
+        addMeal: food => addMeal(dispatch, food)
+    };
 }
 
-export default connect(null, mapDispatchToProps)(Search);
+export default connect(
+    null,
+    mapDispatchToProps
+)(Search);

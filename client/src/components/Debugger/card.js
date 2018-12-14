@@ -1,45 +1,44 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Card extends Component {
-
     getData = () => {
-        let data = null
+        let data = null;
 
         switch (this.props.type) {
             case 'user':
-                data = this.props.user
+                data = this.props.user;
                 break;
             case 'meals':
-                data = this.props.meals
+                data = this.props.user.meals;
                 break;
             case 'foods':
-                data = this.props.foods
+                data = this.props.foods;
                 if (this.props.foods.selectedFood) {
                     data = {
                         selectedFood: {
                             _id: this.props.foods.selectedFood._id,
                             name: this.props.foods.selectedFood.name
                         }
-                    }
+                    };
                 }
                 break;
             case 'nutrients':
-                data = this.props.nutrients
+                data = this.props.nutrients;
                 break;
             case 'recipes':
-                data = this.props.recipes
+                data = this.props.recipes;
                 break;
             default:
                 break;
         }
 
         if (data) {
-            return JSON.stringify(data, null, 2)
+            return JSON.stringify(data, null, 2);
         } else {
-            return 'No data'
+            return 'No data';
         }
-    }
+    };
 
     render() {
         return (
@@ -56,11 +55,14 @@ class Card extends Component {
 function mapStateToProps(state) {
     return {
         user: state.user,
-        foods: state.foods,
         meals: state.meals,
+        foods: state.foods,
         recipes: state.recipes,
         nutrients: state.nutrients
-    }
+    };
 }
 
-export default connect(mapStateToProps, null)(Card);
+export default connect(
+    mapStateToProps,
+    null
+)(Card);

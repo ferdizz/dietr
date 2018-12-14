@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import Card from './card'
-import Importer from './importer'
+import React, { Component } from 'react';
+import Card from './card';
+import Importer from './importer';
 
 class Debugger extends Component {
     render() {
@@ -8,9 +8,9 @@ class Debugger extends Component {
             <div>
                 <Importer />
                 <Card type={'user'} />
+                <Card type={'meals'} />
                 <Card type={'foods'} />
                 <Card type={'nutrients'} />
-                <Card type={'meal'} />
                 <Card type={'recipes'} />
             </div>
         );

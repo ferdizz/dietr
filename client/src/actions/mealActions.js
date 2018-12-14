@@ -1,15 +1,5 @@
-// import axios from 'axios'
-import * as types from './actionTypes'
-// import { saveData, getData } from '../utils/storage'
+import { createAction } from 'redux-actions';
 
-export const addMeal = (dispatch, food) => {
-    dispatch({
-        type: types.ADD_MEAL,
-        data: {
-            food: food,
-            amount: 100,
-            saved: false,
-            time: Date.now(),
-        }
-    })
-}
+import * as actions from './actionTypes';
+
+export const addMeal = createAction(actions.ADD_MEAL_REQUEST);

@@ -2,8 +2,11 @@ import * as actions from '../actions/actionTypes';
 
 const initialState = {
     id: '',
-    username: '',
     token: '',
+    username: '',
+    height: 0,
+    weight: 0,
+    meals: [],
     loading: false,
     error: ''
 };
@@ -18,10 +21,12 @@ const user = (state = initialState, action) => {
         case actions.USER_SIGNUP_SUCCESS:
             return {
                 ...state,
-                loading: false,
-                id: action.payload.id,
-                username: action.payload.username,
+                id: action.payload._id,
                 token: action.payload.token,
+                username: action.payload.username,
+                height: action.payload.height || 0,
+                weight: action.payload.weight || 0,
+                loading: false,
                 error: ''
             };
         case actions.USER_LOGOUT_SUCCESS:
@@ -29,7 +34,7 @@ const user = (state = initialState, action) => {
         case actions.USER_LOGIN_FAILURE:
         case actions.USER_SIGNUP_FAILURE:
         case actions.USER_LOGOUT_FAILURE:
-            return { ...state, loading: false, error: action.payload.error };
+            return { ...state, loading: false, error: action.payload };
         default:
             return state;
     }

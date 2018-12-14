@@ -1,70 +1,46 @@
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 
-import * as actions from '../actions/actionTypes';
+import * as actions from '../actions/userActions';
+import { handleError } from '../utils/helper';
 import * as API from '../api/userAPI';
 
-/**
- * Login
- */
-export function* login({ payload }) {
+export function* handleLogin({ payload }) {
     try {
         const response = yield call(API.login, payload);
         if (response.data.token) {
-            yield put({
-                type: actions.USER_LOGIN_SUCCESS,
-                payload: response.data
-            });
+            yield put(actions.userLoginSuccess(response.data));
         }
     } catch (e) {
-        console.log(e);
-        yield put({
-            type: actions.USER_LOGIN_FAILURE,
-            payload: { error: 'Login failed' }
-        });
+        handleError(e);
+        yield put(actions.userLoginFailure('Login failed'));
     }
 }
 
-/**
- * Signup
- */
-export function* signup({ payload }) {
+export function* handleSignup({ payload }) {
     try {
         const response = yield call(API.signup, payload);
         if (response.data.token) {
-            yield put({
-                type: actions.USER_SIGNUP_SUCCESS,
-                payload: response.data
-            });
+            yield put(actions.userSignupSuccess(response.data));
         }
     } catch (e) {
-        console.log(e);
-        yield put({
-            type: actions.USER_SIGNUP_FAILURE,
-            payload: { error: 'Signup failed' }
-        });
+        handleError(e);
+        yield put(actions.userSignupFailure('Signup failed'));
     }
 }
 
-/**
- * Logout
- */
-export function* logout() {
+export function* handleLogout() {
     try {
-        yield put({
-            type: actions.USER_LOGOUT_SUCCESS
-        });
+        yield put(actions.userLogoutSuccess());
     } catch (e) {
-        yield put({
-            type: actions.USER_LOGOUT_FAILURE,
-            payload: { error: 'Logout failed' }
-        });
+        handleError(e);
+        yield put(actions.userLogoutFailure('Logout failed'));
     }
 }
 
 export default function* root() {
     yield all([
-        takeLatest(actions.USER_LOGIN_REQUEST, login),
-        takeLatest(actions.USER_SIGNUP_REQUEST, signup),
-        takeLatest(actions.USER_LOGOUT_REQUEST, logout)
+        takeLatest(actions.userLogin, handleLogin),
+        takeLatest(actions.userSignup, handleSignup),
+        takeLatest(actions.userLogout, handleLogout)
     ]);
 }
