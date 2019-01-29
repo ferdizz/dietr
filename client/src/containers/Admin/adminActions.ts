@@ -1,16 +1,12 @@
-import { createAction, ActionType } from "typesafe-actions";
+import { ActionType, createAsyncAction } from "typesafe-actions";
 import { IUserState } from "../User";
 
 export type KnownActions = ActionType<typeof adminActions>;
 
 export const adminActions = {
-    getUsers: createAction("ADMIN/GET_USERS_REQUEST"),
-    getUsersSuccess: createAction(
+    getUsers: createAsyncAction(
+        "ADMIN/GET_USERS_REQUEST",
         "ADMIN/GET_USERS_SUCCESS",
-        resolve => (users: IUserState[]) => resolve(users)
-    ),
-    getUsersFailure: createAction(
-        "ADMIN/GET_USERS_FAILURE",
-        resolve => (error: string) => resolve(error)
-    )
+        "ADMIN/GET_USERS_FAILURE"
+    )<void, IUserState[], string>()
 };

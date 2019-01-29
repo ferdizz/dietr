@@ -29,25 +29,25 @@ const reducer: Reducer<IUserState> = (
     const action = incomingAction as KnownActions;
 
     switch (action.type) {
-        case getType(userActions.userLogin):
-        case getType(userActions.userLogout):
-        case getType(userActions.userSignup):
+        case getType(userActions.login.request):
+        case getType(userActions.logout.request):
+        case getType(userActions.signup.request):
             return {
                 ...state,
                 loading: true
             };
 
-        case getType(userActions.userLoginFailure):
-        case getType(userActions.userLogoutFailure):
-        case getType(userActions.userSignupFailure):
+        case getType(userActions.login.failure):
+        case getType(userActions.logout.failure):
+        case getType(userActions.signup.failure):
             return {
                 ...state,
                 loading: false,
                 error: action.payload
             };
 
-        case getType(userActions.userLoginSuccess):
-        case getType(userActions.userSignupSuccess):
+        case getType(userActions.login.success):
+        case getType(userActions.signup.success):
             // return {
             //     ...state,
             //     loading: false,
@@ -61,7 +61,7 @@ const reducer: Reducer<IUserState> = (
                 loading: false
             };
 
-        case getType(userActions.userLogoutSuccess):
+        case getType(userActions.logout.success):
             return unloadedState;
 
         default:

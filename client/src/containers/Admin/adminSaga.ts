@@ -6,7 +6,9 @@ import apiRequest from "src/utils/apiRequest";
 import { getUser } from "../User/userSelectors";
 import { getType } from "typesafe-actions";
 
-export function* fetchUsers(action: ReturnType<typeof adminActions.getUsers>) {
+export function* fetchUsers(
+    action: ReturnType<typeof adminActions.getUsers.request>
+) {
     try {
         const user = yield select(getUser);
         const url = "http://localhost:3001/users";
@@ -18,13 +20,13 @@ export function* fetchUsers(action: ReturnType<typeof adminActions.getUsers>) {
             "GET"
         );
         console.log("Users: ", users);
-        yield put(adminActions.getUsersSuccess(users));
+        yield put(adminActions.getUsers.success(users));
     } catch (e) {
         handleError(e);
-        yield put(adminActions.getUsersFailure("Could not retrieve users"));
+        yield put(adminActions.getUsers.failure("Could not retrieve users"));
     }
 }
 
 export default function* root() {
-    yield all([takeLatest(getType(adminActions.getUsers), fetchUsers)]);
+    yield all([takeLatest(getType(adminActions.getUsers.request), fetchUsers)]);
 }

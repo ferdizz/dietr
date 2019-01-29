@@ -22,20 +22,20 @@ const reducer: Reducer<IAdminState> = (
     const action = incomingAction as KnownActions;
 
     switch (action.type) {
-        case getType(adminActions.getUsers):
+        case getType(adminActions.getUsers.request):
             return {
                 ...state,
                 loading: true
             };
 
-        case getType(adminActions.getUsersFailure):
+        case getType(adminActions.getUsers.failure):
             return {
                 ...state,
                 loading: false,
                 error: action.payload
             };
 
-        case getType(adminActions.getUsersSuccess):
+        case getType(adminActions.getUsers.success):
             return {
                 ...state,
                 loading: false,

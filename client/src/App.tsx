@@ -55,10 +55,10 @@ const mapStateToProps = (state: IApplicationState) => {
 const mapDispatchToProps = (dispatch: any) =>
     bindActionCreators(
         {
-            login: userActions.userLogin,
-            logout: userActions.userLogout,
-            signup: userActions.userSignup,
-            getUsers: adminActions.getUsers
+            login: userActions.login.request,
+            logout: userActions.logout.request,
+            signup: userActions.signup.request,
+            getUsers: adminActions.getUsers.request
         },
         dispatch
     );

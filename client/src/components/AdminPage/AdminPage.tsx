@@ -48,7 +48,7 @@ const mapStateToProps = (state: IApplicationState) => {
 const mapDispatchToProps = (dispatch: any) =>
     bindActionCreators(
         {
-            getUsers: adminActions.getUsers
+            getUsers: adminActions.getUsers.request
         },
         dispatch
     );

@@ -7,7 +7,7 @@ import { getUser } from "./userSelectors";
 
 const baseUrl = "http://localhost:3001/users";
 
-export function* handleLogin(action: ReturnType<typeof actions.userLogin>) {
+export function* handleLogin(action: ReturnType<typeof actions.login.request>) {
     try {
         const user = yield select(getUser);
         const url = `${baseUrl}/login`;
@@ -20,15 +20,17 @@ export function* handleLogin(action: ReturnType<typeof actions.userLogin>) {
         );
 
         if (userdata.token) {
-            yield put(actions.userLoginSuccess(userdata));
+            yield put(actions.login.success(userdata));
         }
     } catch (e) {
         handleError(e);
-        yield put(actions.userLoginFailure("Login failed"));
+        yield put(actions.login.failure("Login failed"));
     }
 }
 
-export function* handleSignup(action: ReturnType<typeof actions.userSignup>) {
+export function* handleSignup(
+    action: ReturnType<typeof actions.signup.request>
+) {
     try {
         const user = yield select(getUser);
         const url = `${baseUrl}/signup`;
@@ -41,27 +43,27 @@ export function* handleSignup(action: ReturnType<typeof actions.userSignup>) {
         );
 
         if (userdata.token) {
-            yield put(actions.userSignupSuccess(userdata));
+            yield put(actions.signup.success(userdata));
         }
     } catch (e) {
         handleError(e);
-        yield put(actions.userSignupFailure("Signup failed"));
+        yield put(actions.signup.failure("Signup failed"));
     }
 }
 
 export function* handleLogout() {
     try {
-        yield put(actions.userLogoutSuccess());
+        yield put(actions.logout.success());
     } catch (e) {
         handleError(e);
-        yield put(actions.userLogoutFailure("Logout failed"));
+        yield put(actions.logout.failure("Logout failed"));
     }
 }
 
 export default function* root() {
     yield all([
-        takeLatest(getType(actions.userLogin), handleLogin),
-        takeLatest(getType(actions.userSignup), handleSignup),
-        takeLatest(getType(actions.userLogout), handleLogout)
+        takeLatest(getType(actions.login.request), handleLogin),
+        takeLatest(getType(actions.signup.request), handleSignup),
+        takeLatest(getType(actions.logout.request), handleLogout)
     ]);
 }
