@@ -1,3 +1,5 @@
+import { IApplicationState } from 'src/reducers';
+
 export const loadState = () => {
     try {
         const serializedState = localStorage.getItem('state');
@@ -11,7 +13,7 @@ export const loadState = () => {
     }
 };
 
-export const saveState = state => {
+export const saveState = (state: IApplicationState) => {
     try {
         const serializedState = JSON.stringify(state);
         localStorage.setItem('state', serializedState);

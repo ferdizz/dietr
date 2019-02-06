@@ -1,9 +1,8 @@
-const User = require('../models/user');
-const jwt = require('jsonwebtoken');
+const User = require("../models/user");
+const jwt = require("jsonwebtoken");
 
 exports.get_users = (req, res, next) => {
-    console.log(req.userData);
-    User.find({}, '-__v')
+    User.find({}, "-__v")
         .then(users => {
             res.status(200).send(users);
         })
@@ -11,7 +10,7 @@ exports.get_users = (req, res, next) => {
 };
 
 exports.get_user_by_id = (req, res, next) => {
-    User.findOne({ _id: req.params.id }, '-__v')
+    User.findOne({ _id: req.params.id }, "-__v")
         .then(user => {
             res.status(200).send(user);
         })
@@ -24,7 +23,7 @@ exports.signup = (req, res, next) => {
     User.findOne({ username: username }).then(userExists => {
         if (userExists) {
             return res.status(409).json({
-                message: 'Username taken'
+                message: "Username taken"
             });
         }
 
@@ -51,7 +50,7 @@ exports.login = (req, res, next) => {
     User.findOne({ username: username }).then(user => {
         if (!user) {
             return res.status(401).json({
-                message: 'Login failed'
+                message: "Login failed"
             });
         }
 
@@ -70,7 +69,7 @@ const getToken = user => {
         },
         process.env.JWT_KEY,
         {
-            expiresIn: '1h'
+            expiresIn: "1h"
         }
     );
 };

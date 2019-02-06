@@ -1,14 +1,7 @@
-import { all, fork } from 'redux-saga/effects';
+import { all, fork } from "redux-saga/effects";
+import userSaga from "../containers/User/userSaga";
+import adminSaga from "../containers/Admin/adminSaga";
 
-import userSaga from './userSaga';
-// import mealSaga from './mealSaga';
-
-/**
- * rootSaga
- */
 export default function* rootSaga() {
-    yield all([
-        fork(userSaga)
-        // fork(mealSaga)
-    ]);
+    yield all([fork(userSaga), fork(adminSaga)]);
 }
