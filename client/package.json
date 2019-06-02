@@ -11,7 +11,7 @@
     "react-autosuggest": "^9.4.2",
     "react-dom": "^16.6.0",
     "react-redux": "^5.1.0",
-    "react-scripts-ts": "3.1.0",
+    "react-scripts": "^3.0.1",
     "redux": "^3.7.2",
     "redux-actions": "^2.6.4",
     "redux-saga": "^0.16.2",
@@ -19,22 +19,22 @@
     "typesafe-actions": "^2.0.4"
   },
   "scripts": {
-    "start": "react-scripts-ts start",
-    "build": "CI=false react-scripts-ts build",
-    "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "@types/jest": "^23.3.10",
+    "@types/jest": "^23.3.14",
     "@types/lodash": "^4.14.119",
-    "@types/node": "^10.12.15",
-    "@types/react": "^16.7.17",
-    "@types/react-dom": "^16.0.11",
+    "@types/node": "^10.14.8",
+    "@types/react": "^16.8.19",
+    "@types/react-dom": "^16.8.4",
     "@types/react-redux": "^6.0.11",
     "@types/redux-actions": "^2.3.1",
     "@types/styled-components": "^4.1.4",
     "@types/webpack-env": "^1.13.6",
-    "typescript": "^3.2.2"
+    "typescript": "^3.5.1"
   },
   "browserslist": [
     ">0.2%",

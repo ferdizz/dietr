@@ -1,4 +1,4 @@
-import { IApplicationState } from 'src/reducers';
+import { IApplicationState } from '../reducers';
 
 export const loadState = () => {
     try {

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IUserState } from "src/containers/User";
+import { IUserState } from "../../containers/User";
 // import { IUserState } from "src/containers/User";
 // import "../../styles/styles.css";
 // import { LinkButton } from "src/styles/generalStyles";

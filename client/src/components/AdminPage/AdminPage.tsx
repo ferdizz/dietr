@@ -1,11 +1,11 @@
 import * as React from "react";
-import { IUserState } from "src/containers/User";
-import { LinkButton } from "src/styles/generalStyles";
+import { IUserState } from "../../containers/User";
+import { LinkButton } from "../../styles/generalStyles";
 import UserList from "../UserList/UserList";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { adminActions } from "src/containers/Admin";
-import { IApplicationState } from "src/reducers";
+import { adminActions } from "../../containers/Admin";
+import { IApplicationState } from "../../reducers";
 
 class AdminPage extends React.Component<AdminPageProps, {}> {
     public render() {

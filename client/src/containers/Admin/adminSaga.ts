@@ -1,8 +1,8 @@
 import { all, call, put, takeLatest, select } from "redux-saga/effects";
 import { adminActions } from "./adminActions";
-import { handleError } from "src/utils/helper";
+import { handleError } from "../../utils/helper";
 import { IUserState } from "../User";
-import apiRequest from "src/utils/apiRequest";
+import apiRequest from "../../utils/apiRequest";
 import { getUser } from "../User/userSelectors";
 import { getType } from "typesafe-actions";
 

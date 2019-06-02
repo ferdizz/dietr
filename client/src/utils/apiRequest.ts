@@ -1,4 +1,4 @@
-import { IUserState } from 'src/containers/User';
+import { IUserState } from '../containers/User';
 
 export const REQUEST_TYPES = {
     GET: 'GET',

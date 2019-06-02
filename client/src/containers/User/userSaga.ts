@@ -2,7 +2,7 @@ import { all, call, put, takeLatest, select } from "redux-saga/effects";
 import { userActions as actions, UserResponse } from "./userActions";
 import { handleError } from "../../utils/helper";
 import { getType } from "typesafe-actions";
-import apiRequest from "src/utils/apiRequest";
+import apiRequest from "../../utils/apiRequest";
 import { getUser } from "./userSelectors";
 
 const baseUrl = "http://localhost:3001/users";

@@ -1,6 +1,6 @@
 import * as React from "react";
 import Progress from "./Progress/index";
-import { IUserState } from "src/containers/User";
+import { IUserState } from "../../containers/User";
 import "../../styles/styles.css";
 
 export type DashboardProps = {

@@ -6,7 +6,7 @@ import nutrients from "./nutrients";
 import userReducer from "../containers/User/userReducer";
 import adminReducer, { IAdminState } from "../containers/Admin/adminReducer";
 
-import { IUserState } from "src/containers/User";
+import { IUserState } from "../containers/User";
 
 export interface IApplicationState {
     user: IUserState;
