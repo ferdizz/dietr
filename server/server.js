@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 app.use(logger("dev"));
 
 // Enable CORS from client-side
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header(
         "Access-Control-Allow-Headers",
@@ -71,7 +71,9 @@ mongoose
     .connect(
         config.db_uri,
         {
-            useMongoClient: true
+            useCreateIndex: true,
+            useNewUrlParser: true,
+            useUnifiedTopology: true
         }
     )
     .then(
